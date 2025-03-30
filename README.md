@@ -40,7 +40,7 @@ Ensure you have Python installed, then follow these steps:
 6. Click the **Clear File** button to reset and upload a new document.
 
 ## 📷 Screenshots
-![Word Limit Screenshot](screenshot.png) *(Add an actual screenshot here)*
+![Word Limit Screenshot](screenshot.png)
 
 ## 🛡️ Tech Stack
 - **Frontend:** Streamlit
