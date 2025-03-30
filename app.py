@@ -41,7 +41,7 @@ if "uploaded_file" not in st.session_state:
 
 # Only show file uploader if no file has been uploaded
 if st.session_state.uploaded_file is None:
-    uploaded_file = st.file_uploader("Upload a document", type=["pdf", "docx"], help="Only PDF and DOCX files are supported.")
+    uploaded_file = st.file_uploader("Upload a document", type=["pdf", "docx", "txt"], help="Only PDF, TXT and DOCX files are supported.")
     if uploaded_file is not None:
         st.session_state.uploaded_file = uploaded_file  # Store file in session state
 
@@ -53,6 +53,8 @@ if st.session_state.uploaded_file is not None:
         text = read_pdf(st.session_state.uploaded_file)
     elif file_extension == "docx":
         text = read_docx(st.session_state.uploaded_file)
+    elif file_extension == "txt":
+        text = st.session_state.uploaded_file.read().decode("utf-8")
     else:
         st.error("❌ Unsupported file type. Please upload a PDF or Word document.")
     
